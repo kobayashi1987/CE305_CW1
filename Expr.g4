@@ -1,6 +1,10 @@
+// src/main/antlr/Expr.g4
 grammar Expr;
 
-program: statement+ EOF ;
+// Parser Rules
+program
+    : statement+ EOF
+    ;
 
 statement
     : assignment ';'
@@ -29,6 +33,7 @@ primaryExpr
     | INT
     ;
 
+// Lexer Rules
 ID  : [a-zA-Z_][a-zA-Z0-9_]* ;
 INT : [0-9]+ ;
 WS  : [ \t\r\n]+ -> skip ;
